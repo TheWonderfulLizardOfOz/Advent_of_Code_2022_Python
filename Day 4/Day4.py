@@ -6,11 +6,9 @@ def parse():
 
     for line in lines:
         temp = line.split(",")
-        l0 = temp[0].strip("\n")
-        l1 = temp[1].strip("\n")
-
-        assignments.append(l0)
-        assignments.append(l1)
+        for part in temp:
+            l = part.strip("\n")
+            assignments.append(l)
 
     newA = []
     for a in assignments:
