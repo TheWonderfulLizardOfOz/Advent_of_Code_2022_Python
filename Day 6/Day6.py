@@ -29,7 +29,6 @@ def part2():
     file.close()
 
     packets = [""]*14
-    print(packets)
     count = 0
     for c in data:
         count += 1
