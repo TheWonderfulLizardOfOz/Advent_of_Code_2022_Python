@@ -22,7 +22,7 @@ def clockCycle(spritePos, cycleCount):
         pixels = [""]*40
 
 def part1():
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
     lines = file.readlines()
     file.close()
 
@@ -47,7 +47,7 @@ def part1():
     return total
 
 def part2():
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
     lines = file.readlines()
     file.close()
 

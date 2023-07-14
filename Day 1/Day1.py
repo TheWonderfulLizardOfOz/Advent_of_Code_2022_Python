@@ -1,7 +1,7 @@
 import time
 def day1():
     topELves = [0, 0, 0]
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
     lines = file.readlines()
     file.close()
     elfCal = 0

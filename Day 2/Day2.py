@@ -16,7 +16,7 @@ def day2part1():
     return total
 
 def day2part2():
-    file = open("input.txt", "r")
+    file = open("testCase.txt", "r")
     lines = file.readlines()
     file.close()
 

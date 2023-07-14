@@ -1,23 +1,26 @@
+import numpy as np
+
 def openFile():
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
     lines = file.readlines()
     file.close()
 
     for i in range(len(lines)):
         lines[i] = list(lines[i].strip("\n"))
 
+    lines = np.array(lines)
     return lines
 
 def findVisibleTrees():
     lines = openFile()
 
-    markedTrees = {}
+    markedTrees = set()
     # Check left view
     for i in range(1, len(lines) - 1):
         maxInRow = lines[i][0]
         for j in range(1, len(lines[i]) - 1):
             if lines[i][j] > maxInRow:
-                markedTrees[i, j] = "marked"
+                markedTrees.add((i, j))
                 maxInRow = lines[i][j]
 
     # check right
@@ -25,7 +28,7 @@ def findVisibleTrees():
         maxInRow = lines[i][(len(lines) - 1)]
         for j in range(len(lines[i]) - 2, 0, -1):
             if lines[i][j] > maxInRow:
-                markedTrees[i, j] = "marked"
+                markedTrees.add((i, j))
                 maxInRow = lines[i][j]
 
     # check top
@@ -33,7 +36,7 @@ def findVisibleTrees():
         maxInColumn = lines[0][i]
         for j in range(1, len(lines) - 1):
             if lines[j][i] > maxInColumn:
-                markedTrees[j, i] = "marked"
+                markedTrees.add((j, i))
                 maxInColumn = lines[j][i]
 
     # check bottom
@@ -41,7 +44,7 @@ def findVisibleTrees():
         maxInColumn = lines[len(lines) - 1][i]
         for j in range(len(lines) - 2, 0, -1):
             if lines[j][i] > maxInColumn:
-                markedTrees[j, i] = "marked"
+                markedTrees.add((j, i))
                 maxInColumn = lines[j][i]
 
     return markedTrees
@@ -56,7 +59,7 @@ def part2():
     lines = openFile()
 
     maxMult = 0
-    for tree in markedTrees.keys():
+    for tree in markedTrees:
         left = 0
         right = 0
         top = 0

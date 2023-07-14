@@ -1,5 +1,5 @@
 def part1():
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
     lines = file.readlines()
     file.close()
 
@@ -55,7 +55,7 @@ def part1():
 
 
 def part2():
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
     lines = file.readlines()
     file.close()
 

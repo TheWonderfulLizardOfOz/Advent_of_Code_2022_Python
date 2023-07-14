@@ -1,6 +1,6 @@
 def setUp():
     global stackLines, operations, stacks
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
     lines = file.readlines()
     stackLines = lines[0:8]
     operations = lines[10::]

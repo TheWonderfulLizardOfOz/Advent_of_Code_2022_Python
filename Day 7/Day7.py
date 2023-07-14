@@ -1,5 +1,5 @@
 def calculateSizes():
-    file = open("input.txt", "r")
+    file = open("test.txt", "r")
     lines = file.readlines()
     file.close()
 
